@@ -4,8 +4,8 @@ import * as math from "mathjs";
 import "./App.css";
 import Button from "./components/Button";
 import Input from "./components/Input";
-/*import { evaluate } from "mathjs";
- */
+//import { evaluate } from "mathjs";
+
 const App = () => {
   const [text, setText] = useState("");
   const [result, setResult] = useState("");
@@ -14,11 +14,11 @@ const App = () => {
     setText((text) => [...text, val, " "]);
   };
 
-  /*const calculateResult = () => {
+  const calculateResult = () => {
     const input = text.join(""); //Remove commas
 
     setResult(math.evaluate(input));
-  }; */
+  };
 
   const resetInput = () => {
     setText("");
@@ -59,7 +59,7 @@ const App = () => {
           <Button symbol="=" handleClick={calculateResult} />
           <Button symbol="-" color={buttonColor} handleClick={addToText} />
         </div>
-        <Button symbol="Clear" color="red" /*handleClick={resetInput} */ />
+        <Button symbol="Clear" color="red" handleClick={resetInput} />
       </div>
     </div>
   );
